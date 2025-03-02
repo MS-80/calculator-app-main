@@ -1,0 +1,116 @@
+/* Base styles for the calculator */
+.calculator {
+    width: 300px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Header and theme switch */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-dark);
+}
+
+.toggle {
+    display: flex;
+    gap: 5px;
+    background: var(--toggle-bg);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.toggle input[type="radio"] {
+    display: none;
+}
+
+.toggle input[type="radio"] + label {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--key-bg);
+    cursor: pointer;
+}
+
+.toggle input[type="radio"]:checked + label {
+    background: var(--key-red);
+}
+
+/* Display */
+.display {
+    background: var(--screen-bg);
+    color: var(--text-white);
+    padding: 20px;
+    text-align: right;
+    font-size: 2em;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.key {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--key-light);
+    color: var(--text-dark);
+    box-shadow: 0 3px var(--key-light-shadow);
+}
+
+.key:hover {
+    opacity: 0.9;
+}
+
+.del, .reset {
+    background: var(--key-bg);
+    color: var(--text-white);
+    box-shadow: 0 3px var(--key-shadow);
+}
+
+.equal {
+    background: var(--key-red);
+    color: var(--text-white);
+    box-shadow: 0 3px var(--key-red-shadow);
+}
+
+.reset, .equal {
+    grid-column: span 2;
+}
+
+/* Default theme (theme1) applied to root */
+:root {
+    --main-bg: hsl(222, 26%, 31%);
+    --toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-red: hsl(6, 63%, 50%);
+    --key-red-shadow: hsl(6, 70%, 34%);
+    --key-light: hsl(30, 25%, 89%);
+    --key-light-shadow: hsl(28, 16%, 65%);
+    --text-dark: hsl(221, 14%, 31%);
+    --text-white: hsl(0, 0%, 100%);
+}
+
+.calculator {
+    background: var(--main-bg);
+}
